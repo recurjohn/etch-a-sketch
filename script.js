@@ -19,7 +19,7 @@ test.classList.add('box');
 */
 
 function changeBackground(name) {
-    name.style.display = 'background-color: white'; 
+    name.style.backgroundColor = "white";
 }
 
 /* Testing a function to see that it gets called within the function
@@ -32,14 +32,16 @@ function createRow() { //adds 16 divs
     for (let i=0; i < 16; i++) {
         let temp = document.createElement("div");
         temp.classList.add('box');
-        temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "white"; } );
+        //temp.addEventListener("mouseover", changeBackground(temp)); //Why doesn't this work? It has the same code for the function
+        temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "gray"; } );
         document.getElementById("container").appendChild(temp);
-        console.log("This is iteration " + i);
+        //console.log("This is iteration " + (i + 1));
     }
 }
 
 for (i=0; i<16; i++) { //16 rows vertical
     createRow(); 
+    console.log("This is row number " + (i + 1));
 }
 
 
