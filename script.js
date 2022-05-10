@@ -1,19 +1,22 @@
 //To make a 16x16 grid of divs, you probably need a div to hold all 16
 
-var container = document.createElement("div");
-container.setAttribute('id', 'container');
-container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(16,100px)';
+var container = document.createElement("div"); //Create container through js
+container.setAttribute('id', 'container'); //Set id 
+container.style.display = 'grid'; //Apply grid to div 
+container.style.gridTemplateColumns = 'repeat(16,100px)'; //Applying 16 col grid to div
 //container.style.padding = '10px';
 
-document.body.appendChild(container);
+document.body.appendChild(container); //Attach to HTML body
 
-var box = document.createElement("div");
-box.classList.add('box');
+/* This creates the box class
+var box = document.createElement("div"); //Create a box element through js
+box.classList.add('box'); //Set class
+*/
 
-
-var test = document.createElement("div");
+/* This was to test using a different variable name
+var test = document.createElement("div"); 
 test.classList.add('box');
+*/
 
 function createRow() { //adds 16 divs
     for (let i=0; i < 16; i++) {
@@ -24,7 +27,7 @@ function createRow() { //adds 16 divs
     }
 }
 
-for (i=0; i<16; i++) { //lol
+for (i=0; i<16; i++) { //16 rows vertical
     createRow(); 
 }
 
