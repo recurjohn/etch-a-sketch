@@ -44,9 +44,27 @@ for (i=0; i<16; i++) { //16 rows vertical
     console.log("This is row number " + (i + 1));
 }
 
-//New Grid Button
+//Get input from user through button
 function getInput() {
     let input = prompt("Please put in the number of squares per side for the new grid.", "100");
 
+    //add conditions for edge cases (non-numbers, anything over 100 are excluded)
+
     console.log(input); 
 }    
+
+//Helper function to reset etch-a-sketch
+function clear() {
+    
+}
+
+//Helper function to set a new grid with Grid Input 
+function setNewGrid() {
+
+}
+
+//Load in new grid using helper functions
+function replaceGrid() {
+    clear();
+    setNewGrid();
+}
