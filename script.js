@@ -44,6 +44,9 @@ for (i=0; i<16; i++) { //16 rows vertical
     console.log("This is row number " + (i + 1));
 }
 
+//New Grid Button
+function getInput() {
+    let input = prompt("Please put in the number of squares per side for the new grid.", "100");
 
-//document.getElementById("container").appendChild(box);
-//document.getElementById("container").appendChild(test);
+    console.log(input); 
+}    
