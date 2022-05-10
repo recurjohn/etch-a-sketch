@@ -18,10 +18,21 @@ var test = document.createElement("div");
 test.classList.add('box');
 */
 
+function changeBackground(name) {
+    name.style.display = 'background-color: white'; 
+}
+
+/* Testing a function to see that it gets called within the function
+function testFunction() { 
+    alert("Hello World");
+}
+*/
+
 function createRow() { //adds 16 divs
     for (let i=0; i < 16; i++) {
         let temp = document.createElement("div");
         temp.classList.add('box');
+        temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "white"; } );
         document.getElementById("container").appendChild(temp);
         console.log("This is iteration " + i);
     }
