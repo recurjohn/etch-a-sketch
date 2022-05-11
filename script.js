@@ -55,7 +55,7 @@ function getInput() {
 
 //Helper function to reset etch-a-sketch
 function clear() {
-    
+    document.body.removeChild(container); //Attach to HTML body
 }
 
 //Helper function to set a new grid with Grid Input 
@@ -68,3 +68,5 @@ function replaceGrid() {
     clear();
     setNewGrid();
 }
+
+clear();
