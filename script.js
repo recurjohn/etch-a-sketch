@@ -2,8 +2,12 @@
 
 var container = document.createElement("div"); //Create container through js
 container.setAttribute('id', 'container'); //Set id 
-container.style.display = 'grid'; //Apply grid to div 
-container.style.gridTemplateColumns = 'repeat(16,100px)'; //Applying 16 col grid to div
+container.style.display = 'flex';
+container.style.flexWrap = 'wrap';
+//container.style.flexBasis = 'auto';
+container.style.width = '1000px';
+//container.style.display = 'grid'; //Apply grid to div 
+//container.style.gridTemplateColumns = 'repeat(16,100px)'; //Applying 16 col grid to div
 //container.style.padding = '10px';
 
 document.body.appendChild(container); //Attach to HTML body
@@ -28,10 +32,10 @@ function testFunction() {
 }
 */
 
-function createRow() { //adds 16 divs
-    for (let i=0; i < 16; i++) {
+function createCol(n) { //want to make this n long
+    for (let i=0; i < n; i++) {
         let temp = document.createElement("div");
-        temp.classList.add('box');
+        temp.classList.add('box'); 
         //temp.addEventListener("mouseover", changeBackground(temp)); //Why doesn't this work? It has the same code for the function
         temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "gray"; } );
         document.getElementById("container").appendChild(temp);
@@ -39,10 +43,18 @@ function createRow() { //adds 16 divs
     }
 }
 
-for (i=0; i<16; i++) { //16 rows vertical
-    createRow(); 
-    console.log("This is row number " + (i + 1));
+createCol(100); // works as expected, creates 10 columns of squares.
+//createCol(100); // works as expected, creates 10 columns of squares.
+
+
+function createRow(n) { //doesn't work as expected, makes more columns. want it to start on a new line. how do i start it on a new line??
+    for (let i=0; i<n; i++) { //16 rows vertical
+        createCol(n); 
+        console.log("This is row number " + (i + 1));
+    }
 }
+
+//createRow(2);
 
 //Get input from user through button
 function getInput() {
@@ -69,4 +81,9 @@ function replaceGrid() {
     setNewGrid();
 }
 
-clear();
+
+//Testing functions
+
+
+//newGrid(4);
+//clear();
