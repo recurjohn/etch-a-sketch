@@ -1,62 +1,40 @@
-//To make a 16x16 grid of divs, you probably need a div to hold all 16
-
-var container = document.createElement("div"); //Create container through js
-container.setAttribute('id', 'container'); //Set id 
+//Set main container to hold grid
+var container = document.createElement("div"); 
+container.setAttribute('id', 'container'); 
 container.style.display = 'flex';
-container.style.flexWrap = 'wrap';
-//container.style.flexBasis = 'auto';
-container.style.width = '1000px';
-//container.style.display = 'grid'; //Apply grid to div 
-//container.style.gridTemplateColumns = 'repeat(16,100px)'; //Applying 16 col grid to div
-//container.style.padding = '10px';
+container.style.maxWidth = '1000px';
 
 document.body.appendChild(container); //Attach to HTML body
 
-/* This creates the box class
-var box = document.createElement("div"); //Create a box element through js
-box.classList.add('box'); //Set class
-*/
+//Function to create columns
+function createCol(n) { 
+    //Create subcontainer for boxes to fill in
+    var subcontainer = document.createElement("div"); 
+    subcontainer.setAttribute('id', 'subcontainer'); 
+    subcontainer.style.display = 'flex';
+    subcontainer.style.maxWidth = '1000px';
+    document.getElementById("container").appendChild(subcontainer);
 
-/* This was to test using a different variable name
-var test = document.createElement("div"); 
-test.classList.add('box');
-*/
-
-function changeBackground(name) {
-    name.style.backgroundColor = "white";
-}
-
-/* Testing a function to see that it gets called within the function
-function testFunction() { 
-    alert("Hello World");
-}
-*/
-
-function createCol(n) { //want to make this n long
     for (let i=0; i < n; i++) {
+        //Set up boxes by creating divs 
         let temp = document.createElement("div");
         temp.classList.add('box'); 
-        //temp.addEventListener("mouseover", changeBackground(temp)); //Why doesn't this work? It has the same code for the function
+        //Set up mousover interaction 
         temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "gray"; } );
-        document.getElementById("container").appendChild(temp);
-        //console.log("This is iteration " + (i + 1));
+        //Add boxes to subcontainer
+        document.getElementById("subcontainer").appendChild(temp);
     }
+    
 }
 
-createCol(100); // works as expected, creates 10 columns of squares.
-//createCol(100); // works as expected, creates 10 columns of squares.
+createCol(20);
 
 
-function createRow(n) { //doesn't work as expected, makes more columns. want it to start on a new line. how do i start it on a new line??
-    for (let i=0; i<n; i++) { //16 rows vertical
-        createCol(n); 
-        console.log("This is row number " + (i + 1));
-    }
+function createRow(n) {
 }
 
-//createRow(2);
 
-//Get input from user through button
+//Function to get input from user
 function getInput() {
     let input = prompt("Please put in the number of squares per side for the new grid.", "100");
 
@@ -83,7 +61,3 @@ function replaceGrid() {
 
 
 //Testing functions
-
-
-//newGrid(4);
-//clear();
