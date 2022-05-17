@@ -32,9 +32,16 @@ function createCol(n) {
 createCol(10);
 
 
-function createRow(n) {
-}
+/*function createRow(n) {
+    for (let i=0; i < n; i++) {
+        var subsubcontainer = document.createElement("div"); 
+        subsubcontainer.setAttribute('id', 'subsubcontainer'); 
+        document.getElementById("container").appendChild(subsubcontainer);
+        createCol(n);
+    }
+}*/
 
+//createRow(10)
 
 //Function to get input from user
 function getInput() {
