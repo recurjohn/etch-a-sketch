@@ -11,14 +11,15 @@ function createCol(n) {
     //Create subcontainer for boxes to fill in
     var subcontainer = document.createElement("div"); 
     subcontainer.setAttribute('id', 'subcontainer'); 
-    subcontainer.style.display = 'flex';
-    subcontainer.style.maxWidth = '1000px';
     document.getElementById("container").appendChild(subcontainer);
+    subcontainer.style.maxWidth = '1000px';
+    subcontainer.style.display = 'flex';
 
     for (let i=0; i < n; i++) {
         //Set up boxes by creating divs 
         let temp = document.createElement("div");
         temp.classList.add('box'); 
+        temp.style.flexBasis = 'auto';
         //Set up mousover interaction 
         temp.addEventListener("mouseover", function() { temp.style.backgroundColor = "gray"; } );
         //Add boxes to subcontainer
@@ -27,7 +28,8 @@ function createCol(n) {
     
 }
 
-createCol(20);
+//Testing columns
+createCol(10);
 
 
 function createRow(n) {
