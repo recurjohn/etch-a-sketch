@@ -6,7 +6,6 @@ body {
     background-color: #992a27; 
 }
 
-<<<<<<< HEAD
 .grid {
     margin-top: 50px;
     display: inline-grid;
@@ -16,18 +15,4 @@ body {
     height: 600px;
     width: 600px;
     background-color: #D9D5B3;
-=======
-.box { 
-    background-color: rgb(230, 230, 230);
-    /*border: 1px solid rgb(0, 0, 0); */
-    width: 100px;
-    height: 100px;
-
-}
-
-#newGridBtn {
-    padding: 16px 32px;
-    font-size: 24px;
-    margin: 16px;
->>>>>>> ff3516a168e980b180673bc655dbe069d29a6c38
 }
