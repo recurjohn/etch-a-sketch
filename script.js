@@ -11,9 +11,9 @@ function createGrid() {
     }
 };
 
-let input;
+let input; //set up variable to be used within functions
 
-function getInput() { //get input for new size of grid
+function getInput() { //helper function for setupNewGrid
     input = prompt("Please put in the number of squares per side for the new grid.", "100");
 }    
 
@@ -23,7 +23,7 @@ function removeAllChildNodes(parent) { //helper function for newGrid
     }
 }
 
-function newGrid(n) {
+function newGrid(n) { //function to replace current grid and replace based on input
     removeAllChildNodes(grid);
     grid.setAttribute('style', `grid-template-columns: repeat(${n}, 2fr); grid-template-rows: repeat(${n}, 2fr);`);
     for (let i = 0; i < n*n; i++) {
@@ -36,7 +36,7 @@ function newGrid(n) {
     }
 };
 
-function setupNewGrid() {
+function setupNewGrid() { //function that is called on button press 
     getInput();
     newGrid(input);
 };
