@@ -1,10 +1,18 @@
 body {
-    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #992a27; 
 }
 
-.box { 
-    background-color: black;
-    border: 1px solid red;
-    width: 100px;
-    height: 100px;
+.grid {
+    margin-top: 50px;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    border-radius: 10px;
+    height: 600px;
+    width: 600px;
+    background-color: #D9D5B3;
 }
