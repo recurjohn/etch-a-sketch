@@ -35,3 +35,16 @@ body {
     font-size: 24px; 
     margin: 16px;
 }
+
+.controls {
+    margin-top: 50px;
+    display: flex;
+}
+
+.dot {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
