@@ -14,7 +14,7 @@ function createGrid() {
 let input; //set up variable to be used within functions
 
 function getInput() { //helper function for setupNewGrid
-    input = prompt("Please put in the number of squares per side for the new grid.", "100");
+    input = prompt("Please put in the number of squares per side for the new grid. Max size is 100.", "100");
 }    
 
 function removeAllChildNodes(parent) { //helper function for newGrid
@@ -38,7 +38,12 @@ function newGrid(n) { //function to replace current grid and replace based on in
 
 function setupNewGrid() { //function that is called on button press 
     getInput();
-    newGrid(input);
+    
+    if (input > 100 || input < 1) {
+        alert("Input is less than 1 or greater than 100. Please try again.")
+    } else {
+        newGrid(input);
+    }
 };
 
 
